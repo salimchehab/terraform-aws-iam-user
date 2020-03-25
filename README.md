@@ -17,9 +17,10 @@ This helps to avoid scenarios where auditing the exact permissions of IAM users 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | create\_iam\_group | Create the IAM group if not already existing. | bool | `"false"` | no |
-| iam\_group\_policy\_arns | A list of the ARNs of the policies you want to apply. eg. ['arn:aws:iam::aws:policy/AWSSupportAccess']. | list(string) | `[]` | no |
-| iam\_user\_group\_name | The group's name. The name must consist of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-_.. | string | n/a | yes |
-| iam\_user\_name | The user's name. The name must consist of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-_.. | string | n/a | yes |
+| iam\_group\_policy\_arns | A list of the ARNs of the policies you want to apply. eg. \['arn:aws:iam::aws:policy/AWSSupportAccess'\]. | list(string) | `[]` | no |
+| iam\_user\_group\_name | The group's name. The name must consist of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-\_.. | string | n/a | yes |
+| iam\_user\_name | The user's name. The name must consist of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-\_.. | string | n/a | yes |
+| iam\_user\_tags | Key-value mapping of tags for the IAM user. | map(string) | `{ "Terraform": true }` | no |
 
 ## Outputs
 

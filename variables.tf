@@ -3,6 +3,14 @@ variable "iam_user_name" {
   type        = string
 }
 
+variable "iam_user_tags" {
+  description = "Key-value mapping of tags for the IAM user."
+  type        = map(string)
+  default = {
+    "Terraform" = true
+  }
+}
+
 variable "iam_user_group_name" {
   description = "The group's name. The name must consist of upper and lowercase alphanumeric characters with no spaces. You can also include any of the following characters: =,.@-_.."
   type        = string

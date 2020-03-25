@@ -11,6 +11,7 @@ terraform {
 
 resource "aws_iam_user" "iam_user" {
   name = var.iam_user_name
+  tags = var.iam_user_tags
 }
 
 resource "aws_iam_group" "iam_user_group" {

@@ -21,12 +21,16 @@ data "aws_iam_policy" "SecurityAudit" {
 
 # Create a new user and group "ViewOnlyAccess". Add the user to the new group
 module "iam_user" {
-  source                = "../"
-  iam_user_name         = "testing-awesome-readonly-user"
-  iam_user_group_name   = "ViewOnlySecurityAuditAccess"
-  create_iam_group      = true
+  source              = "../"
+  iam_user_name       = "testing-awesome-readonly-user"
+  iam_user_group_name = "ViewOnlySecurityAuditAccess"
+  create_iam_group    = true
   iam_group_policy_arns = [
     data.aws_iam_policy.ViewOnlyAccess.arn,
     data.aws_iam_policy.SecurityAudit.arn
   ]
+  iam_user_tags = {
+    "Environment" = "Sandbox"
+    "Terraform"   = true
+  }
 }
